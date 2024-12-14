@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Segitiga</title>
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
+    <style>
+        .border-custom {
+            border: 1px solid black;
+        }
+
+        .colon-mark {
+            position: relative;
+        }
+
+        .colon-mark::after {
+            content: ':';
+            font-weight: 500;
+            position: absolute;
+            right: 0;
+            color: #071437;
+        }
+
+        .flex-custom {
+            flex: 1 1 0% !important;
+        }
+
+        @media (min-width:1336px) {
+            .container {
+                width: 35% !important;
+            }
+        }
+
+        @media (max-width:1336px) {
+            .container {
+                width: 45% !important;
+            }
+        }
+
+        @media (max-width:980px) {
+            .container {
+                width: 70% !important;
+            }
+        }
+
+        @media (max-width:720px) {
+            .container {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5 p-5 border-custom">
+        <h4 class="text-decoration-underline text-center mb-4">Hitung Luas Segitiga</h4>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Alas</div>
+            <div class="flex-custom">
+                <input type="number" id="Alas" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Tinggi</div>
+            <div class="flex-custom">
+                <input type="number" id="Tinggi" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-sm btn-primary" id="BtnHitung">Hitung</button>
+        </div>
+
+        <hr/>
+
+        <div class="d-flex">
+            <div class="flex-custom colon-mark me-4">Hasil</div>
+            <div class="flex-custom" id="Result"></div>
+        </div>
+    </div>
+
+    <script src="../libs/jquery.min.js"></script>
+    <script>
+        // inisialisasi awal. Jika halaman berhasil termuat atau tidak loading.
+        $(document).ready(() => {
+            // menginisialisasi event prosedur ProsesHitung pada tombol Hitung dengan Id "BtnHitung"
+            $('#BtnHitung').on('click', ProsesHitung);
+        });
+
+        // inisialisasi Prosedur "ProsesHitung"
+        function ProsesHitung() {
+            // reset text pada element dengan id "Result"
+            $('#Result').text('');
+
+            // mengambil nilai dari element input alas dengan id "Alas"
+            let alasValue = $('#Alas').val();
+
+            // mengambil nilai dari element input tinggi dengan id "tinggi"
+            let tinggiValue = $('#Tinggi').val();
+
+            // mengubah tipe nilai alas dari string ke float
+            let alas = parseFloat(alasValue);
+
+            // mengubah tipe nilai tinggi dari string ke float
+            let tinggi = parseFloat(tinggiValue);
+
+            // melakukan perhitungan berdasarkan rumus luas segitiga
+            let hasil = (1 / 2) * (alas * tinggi);
+
+            // melakukan kondisi apabila nilai dari alas atau tinggi bukan angka maka akan menampilkan alert
+            if (isNaN(hasil)) {
+                alert("Nilai dari Alas atau Tinggi Harus Angka!");
+            } else {
+                // variable hasil ditampilkan pada element dengan id "Result"
+                $('#Result').text(hasil);
+            }
+        }
+    </script>
+</body>
+</html>
