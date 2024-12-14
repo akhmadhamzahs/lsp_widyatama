@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interface</title>
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
+    <style>
+        .border-custom {
+            border: 1px solid black;
+        }
+
+        .colon-mark {
+            position: relative;
+        }
+
+        .colon-mark::after {
+            content: ':';
+            font-weight: 500;
+            position: absolute;
+            right: 0;
+            color: #071437;
+        }
+
+        .flex-custom {
+            flex: 1 1 0% !important;
+        }
+
+        @media (min-width:1336px) {
+            .container {
+                width: 35% !important;
+            }
+        }
+
+        @media (max-width:1336px) {
+            .container {
+                width: 45% !important;
+            }
+        }
+
+        @media (max-width:980px) {
+            .container {
+                width: 70% !important;
+            }
+        }
+
+        @media (max-width:720px) {
+            .container {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container mt-5 p-5 border-custom">
+        <h4 class="text-decoration-underline text-center mb-4">Input Biodata</h4>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">NIK</div>
+            <div class="flex-custom">
+                <input type="text" name="NIK" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Nama</div>
+            <div class="flex-custom">
+                <input type="text" name="Nama" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Tempat Lahir</div>
+            <div class="flex-custom">
+                <input type="text" name="TempatLahir" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Tanggal Lahir</div>
+            <div class="flex-custom">
+                <input type="date" name="TanggalLahir" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Jenis Kelamin</div>
+            <div class="flex-custom">
+                <input type="text" name="JenisKelamin" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-3">
+            <div class="flex-custom colon-mark me-4">Alamat</div>
+            <div class="flex-custom">
+                <input type="text" name="Alamat" class="form-control form-control-sm"/>
+            </div>
+        </div>
+
+        <div class="d-flex mb-4">
+            <div class="flex-custom colon-mark me-4">Agama</div>
+            <div class="flex-custom">
+                <select name="Agama" class="form-control form-control-sm">
+                    <option value="Islam" selected>Islam</option>
+                    <option value="Kristen Protestan">Kristen Protestan</option>
+                    <option value="Kristen Katolik">Kristen Katolik</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-sm btn-success">Send</button>
+            <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>
