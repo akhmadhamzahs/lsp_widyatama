@@ -1,8 +1,9 @@
-Deskripsi ::<br />
+Deskripsi ::
 <ol>
   <li>
     Struktur Data
     <ul>
+      <li>Project bersifat Console.</li>
       <li>Menggunakan IDE Visual Studio Community 2022 versi update 17.12.3.</li>
       <li>Menggunakan .NET 9.</li>
     </ul>
